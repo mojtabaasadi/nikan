@@ -1,0 +1,6 @@
+venv
+files
+*.pyc
+*/*.pyc
+*.db
+out/*
