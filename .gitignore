@@ -4,3 +4,7 @@ files
 */*.pyc
 *.db
 out/*
+deep-text-recognition-benchmark
+lmdb
+saved_models
+trdg

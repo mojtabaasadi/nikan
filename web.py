@@ -1,20 +1,8 @@
 
 from flask import Flask,request,redirect
 import sqlite3
-from .utils import dict_factory
+from .utils import dict_factory,db_action
 
-def db_action(sql,many=False):
-    con = sqlite3.connect('./extractions.db')
-    con.row_factory = dict_factory
-    cur = con.cursor()
-    res = cur.execute(sql)
-    crrc =  res.fetchone() if many == False else res.fetchall()
-    def closer(commit=False):
-        if commit:
-            con.commit()
-        cur.close()
-        con.close()
-    return (crrc,closer)
 
 
 app = Flask(__name__)
